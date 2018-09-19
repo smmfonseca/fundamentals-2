@@ -1,14 +1,115 @@
+// body {
+//   background-color: pink;
+//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//   height: 2000px;
+// }
+
+// .content {
+//   position: absolute;
+//   top: 600px;
+//   background-color: #fefefe;
+//   padding: 50px;
+//   margin: 20px;
+//   box-shadow: inset 1px 1px 11px 0px black;
+// }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: pink;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  height: 2000px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+h1, p {
+  margin: 0 0 20px 0;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .content {
-  position: absolute;
-  top: 600px;
-  background-color: #fefefe;
-  padding: 50px;
-  margin: 20px;
-  box-shadow: inset 1px 1px 11px 0px black;
+  display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+  height: auto;
+  padding: 0 2em 6rem 2em;
+  background: #ecede8;
+  &--reverse {
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		height: auto;
+		width: 50%;
+		padding: 2em;
+		&--grow {
+			width: 100%;
+    }
+  }
+  &__image {
+		width: 50%;
+    &--shrink {
+			width: 30%;
+    }
+  }
+  .header {
+    &--color {
+      color: #f08080;
+    }
+  }
+  .button {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background: #353535;
+    &--bg-color {
+      background: #f08080;
+    }
+  }
+}
+
+.slider {
+	opacity: 0;
+	background: #11b4db;
+	height: 0;
+	position: relative;
+	width: 100%;
+	margin: 18px 0 0 0;
+	transition: all 400ms ease;
+	&__content {
+		padding: 20px;
+		overflow: hidden;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 25px;
+		width: 0; 
+		height: 0; 
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-bottom: 15px solid #11b4db;
+	}
+}
+
+.show {
+  height: 10em;
+	background: #11b4db;
+	color: #fff;
+	padding: 20px;
+	opacity: 1;
+	width: 100%;
+	transition: all 400ms ease;
 }
